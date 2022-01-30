@@ -1,0 +1,39 @@
+Microsoft Visual Studio Solution File, Format Version 7.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "mlib", "..\msynthlib\msynthlib.vcproj", "{3DC07D49-AF41-4C3E-819A-CF8C82D3443B}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "mlib.ui", "..\muilib\muilib.vcproj", "{09F75090-B501-45BD-A8A0-BEF428E0AC25}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MUiAppTest", "..\MUiAppTest\MUiAppTest.vcproj", "{47483614-E2EA-4416-9DE0-8972F6F62E2D}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "msynth", "msynth.vcproj", "{798C68D8-10B9-46B6-9DDA-AF3B827516CB}"
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		ConfigName.0 = Debug
+		ConfigName.1 = Release
+	EndGlobalSection
+	GlobalSection(ProjectDependencies) = postSolution
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{3DC07D49-AF41-4C3E-819A-CF8C82D3443B}.Debug.ActiveCfg = Debug|Win32
+		{3DC07D49-AF41-4C3E-819A-CF8C82D3443B}.Debug.Build.0 = Debug|Win32
+		{3DC07D49-AF41-4C3E-819A-CF8C82D3443B}.Release.ActiveCfg = Release|Win32
+		{3DC07D49-AF41-4C3E-819A-CF8C82D3443B}.Release.Build.0 = Release|Win32
+		{09F75090-B501-45BD-A8A0-BEF428E0AC25}.Debug.ActiveCfg = Debug|Win32
+		{09F75090-B501-45BD-A8A0-BEF428E0AC25}.Debug.Build.0 = Debug|Win32
+		{09F75090-B501-45BD-A8A0-BEF428E0AC25}.Release.ActiveCfg = Release|Win32
+		{09F75090-B501-45BD-A8A0-BEF428E0AC25}.Release.Build.0 = Release|Win32
+		{47483614-E2EA-4416-9DE0-8972F6F62E2D}.Debug.ActiveCfg = Debug|Win32
+		{47483614-E2EA-4416-9DE0-8972F6F62E2D}.Debug.Build.0 = Debug|Win32
+		{47483614-E2EA-4416-9DE0-8972F6F62E2D}.Release.ActiveCfg = Release|Win32
+		{47483614-E2EA-4416-9DE0-8972F6F62E2D}.Release.Build.0 = Release|Win32
+		{798C68D8-10B9-46B6-9DDA-AF3B827516CB}.Debug.ActiveCfg = Debug|Win32
+		{798C68D8-10B9-46B6-9DDA-AF3B827516CB}.Debug.Build.0 = Debug|Win32
+		{798C68D8-10B9-46B6-9DDA-AF3B827516CB}.Release.ActiveCfg = Release|Win32
+		{798C68D8-10B9-46B6-9DDA-AF3B827516CB}.Release.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

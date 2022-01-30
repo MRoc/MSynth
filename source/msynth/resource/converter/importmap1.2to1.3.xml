@@ -1,0 +1,26 @@
+<!-- converts 1.2 to 1.3 -->
+<mobject class="MTreeConverterDocument">
+
+	<mobject class="MElementMatch" name="source">
+		<mobject class="MAttributeMatch" name="value">
+			<possiblecontent>
+				<condition content="MDrumBox"/>
+			</possiblecontent>
+			<converter>
+				<mobject class="MSampleBankImport"/>
+			</converter>
+		</mobject>
+	</mobject>
+	
+	<mobject class="MElementMatch" name="control">
+		<mobject class="MAttributeMatch" name="name">
+			<possiblecontent>
+				<condition content="sample"/>
+			</possiblecontent>
+			<converter>
+				<mobject class="MSampleImport"/>
+			</converter>
+		</mobject>
+	</mobject>
+	
+</mobject>

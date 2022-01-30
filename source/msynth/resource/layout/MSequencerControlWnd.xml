@@ -1,0 +1,26 @@
+<mobject class="MLayout">
+	<mobject class="MLayoutRow" align="CENTER">
+		<children>
+		
+			<mobject class="MLayoutWnd" id="Play"/>
+			<mobject class="MLayoutWnd" id="Stop"/>
+			<mobject class="MLayoutWnd" id="Export"/>
+			<mobject class="MLayoutWnd" id="Record"/>
+			<mobject class="MLayoutLeaf" sizing="HORIZONTAL"/>
+			<mobject class="MLayoutCol" align="LEFT">
+				<children>
+					<mobject class="MLayoutWnd" id="Bpm"/>
+					<mobject class="MLayoutWnd" id="Shuffle"/>
+					<mobject class="MLayoutWnd" id="Playposition"/>
+				</children>
+				<insets>
+					<mobject class="MInsets" left="5" bottom="0" top="0" right="0"/>
+				</insets>
+			</mobject>
+			
+		</children>
+		<insets>
+			<mobject class="MInsets" left="5" bottom="2" top="2" right="5"/>
+		</insets>
+	</mobject>
+</mobject>

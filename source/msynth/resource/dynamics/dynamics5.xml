@@ -1,0 +1,13 @@
+<dynamics name="8/16">
+
+	<d value="1.0"/>
+	<d value="0.25"/>
+	<d value="0.5"/>
+	<d value="0.4"/>
+	
+	<d value="0.5"/>
+	<d value="0.1"/>
+	<d value="0.95"/>
+	<d value="0.3"/>
+	
+</dynamics>

@@ -1,0 +1,40 @@
+<mobject class="MLayout">
+	<mobject class="MLayoutCol" align="CENTER" sizing="HORIZONTAL">
+		<children>
+			<mobject class="MLayoutWnd" id="label.name"/>
+			<mobject class="MLayoutRow" align="CENTER" sizing="HORIZONTAL">
+				<children>
+					<mobject class="MLayoutCol" align="LEFT">
+						<children>
+							<mobject class="MLayoutRow" align="LEFT">
+								<children>
+									<mobject class="MLayoutWnd" id="button.load"/>
+									<mobject class="MLayoutWnd" id="button.loop"/>
+								</children>
+							</mobject>
+							<mobject class="MLayoutRow" align="LEFT">
+								<children>
+									<mobject class="MLayoutWnd" id="button.save"/>
+									<mobject class="MLayoutWnd" id="button.reverse"/>
+								</children>
+							</mobject>
+							<mobject class="MLayoutWnd" id="label.sample"/>
+						</children>
+						<insets>
+							<mobject class="MInsets" left="0" bottom="0" top="2" right="5"/>
+						</insets>
+					</mobject>
+					<mobject class="MLayoutWnd" id="wave.view" sizing="HORIZONTAL"/>
+					<mobject class="MLayoutWnd" id="slider.vol"/>
+					<mobject class="MLayoutWnd" id="slider.tune"/>
+				</children>
+				<insets>
+					<mobject class="MInsets" left="5" bottom="2" top="2" right="5"/>
+				</insets>
+			</mobject>
+		</children>
+		<insets>
+			<mobject class="MInsets" left="1" bottom="1" top="1" right="1"/>
+		</insets>
+	</mobject>
+</mobject>

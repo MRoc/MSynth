@@ -1,0 +1,15 @@
+<!-- converts 1.4 to 1.5 -->
+<mobject class="MTreeConverterDocument">
+	<mobject class="MElementMatch" name="MFxRack">
+		<converter>
+			<mobject class="MElementRenamer" name="mobject"/>
+			<mobject class="MAttributeAdder" name="class" content="MFxRack"/>
+		</converter>
+	</mobject>
+	<mobject class="MElementMatch" name="fx">
+		<converter>
+			<mobject class="MElementRenamer" name="mobject"/>
+			<mobject class="MAttributeAdder" name="class" content="MFxSlot"/>
+		</converter>
+	</mobject>
+</mobject>

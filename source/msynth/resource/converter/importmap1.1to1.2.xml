@@ -1,0 +1,335 @@
+<!-- converts 1.1 to 1.2 -->
+<mobject class="MTreeConverterDocument">
+
+	<mobject class="MElementMatch" name="sequencer">
+		<old name="seq"/>
+		<converter>
+			<mobject class="MElementRenamer" name="sequencer"/>
+			
+			<mobject class="MAttributeRenamer" name="Volume">
+				<old name="vol"/>
+			</mobject>
+			<mobject class="MAttributeRenamer" name="Pan">
+				<old name="pan"/>
+			</mobject>
+			<mobject class="MAttributeRenamer" name="High">
+				<old name="high"/>
+			</mobject>
+			<mobject class="MAttributeRenamer" name="Low">
+				<old name="low"/>
+			</mobject>
+			<mobject class="MAttributeRenamer" name="Fx1">
+				<old name="fx1"/>
+			</mobject>
+			<mobject class="MAttributeRenamer" name="Fx2">
+				<old name="fx2"/>
+			</mobject>
+			<mobject class="MAttributeRenamer" name="Fx3">
+				<old name="fx3"/>
+			</mobject>
+			<mobject class="MAttributeRenamer" name="Fx4">
+				<old name="fx4"/>
+			</mobject>
+			<mobject class="MAttributeRenamer" name="Eq">
+				<old name="eq"/>
+			</mobject>
+			
+			<mobject class="MAttribute2Element" newelementname="control" newattributeoldname="name" newattributeoldvalue="value">
+				<exclude name="bpm"/>
+				<exclude name="shuffle"/>		
+				<exclude name="leftMarker"/>
+				<exclude name="rightMarker"/>
+			</mobject>
+		</converter>
+	</mobject>
+	
+	<mobject class="MElementMatch" name="source">
+		<converter>
+			<mobject class="MAttributeRenamer" name="Volume">
+				<old name="vol"/>
+			</mobject>
+			<mobject class="MAttributeRenamer" name="Pan">
+				<old name="pan"/>
+			</mobject>
+			<mobject class="MAttributeRenamer" name="High">
+				<old name="high"/>
+			</mobject>
+			<mobject class="MAttributeRenamer" name="Low">
+				<old name="low"/>
+			</mobject>
+			<mobject class="MAttributeRenamer" name="Fx1">
+				<old name="fx1"/>
+			</mobject>
+			<mobject class="MAttributeRenamer" name="Fx2">
+				<old name="fx2"/>
+			</mobject>
+			<mobject class="MAttributeRenamer" name="Fx3">
+				<old name="fx3"/>
+			</mobject>
+			<mobject class="MAttributeRenamer" name="Fx4">
+				<old name="fx4"/>
+			</mobject>
+			<mobject class="MAttributeRenamer" name="Eq">
+				<old name="eq"/>
+			</mobject>
+			<mobject class="MAttribute2Element" newelementname="control" newattributeoldname="name" newattributeoldvalue="value">
+				<exclude name="value"/>
+				<exclude name="channelCount"/>		
+				<exclude name="samplebank"/>	
+			</mobject>
+		</converter>
+	</mobject>
+	
+	<mobject class="MElementMatch" name="processor">
+		<mobject class="MAttributeMatch" name="value">
+			<possiblecontent>
+				<condition content="Envelope ADSR"/>
+				<condition content="Envelope"/>
+				<condition content="MEnvelope"/>
+			</possiblecontent>
+			<converter>
+				<mobject class="MAttributeRenamer" name="Sustain">
+					<old name="Substain"/>
+				</mobject>
+				<mobject class="MAttributeContentReplacer" content="Envelope ADSR">
+					<attribute name="value"/>
+				</mobject>
+			</converter>
+		</mobject>
+		<mobject class="MAttributeMatch" name="value">
+			<possiblecontent>
+				<condition content="Filter"/>
+				<condition content="MFilter"/>
+				<condition content="M24dbFilter"/>
+			</possiblecontent>
+			<converter>
+				<mobject class="MAttributeRenamer" name="Sustain">
+					<old name="Substain"/>
+				</mobject>
+				<mobject class="MAttributeRenamer" name="Frequency">
+					<old name="LfoFreq"/>
+				</mobject>
+				<mobject class="MAttributeRenamer" name="Bandwidth">
+					<old name="LfoBandwidth"/>
+				</mobject>
+				<mobject class="MAttributeRenamer" name="Bandwidth">
+					<old name="LfoBandwidth"/>
+				</mobject>
+				<mobject class="MAttributeRenamer" name="Lfo">
+					<old name="LfoOn"/>
+				</mobject>
+				<mobject class="MAttributeRenamer" name="Env">
+					<old name="EnvOn"/>
+				</mobject>
+				<mobject class="MAttributeContentReplacer" content="Filter">
+					<attribute name="value"/>
+				</mobject>
+			</converter>
+		</mobject>
+		<mobject class="MAttributeMatch" name="value">
+			<possiblecontent>
+				<condition content="MoogFilter"/>
+				<condition content="MMoogFilter"/>
+			</possiblecontent>
+			<converter>
+				<mobject class="MAttributeRenamer" name="Sustain">
+					<old name="Substain"/>
+				</mobject>
+				<mobject class="MAttributeContentReplacer" content="MoogFilter">
+					<attribute name="value"/>
+				</mobject>
+			</converter>
+		</mobject>
+		<mobject class="MAttributeMatch" name="value">
+			<possiblecontent>
+				<condition content="Delay"/>
+				<condition content="MDelay"/>
+			</possiblecontent>
+			<converter>
+				<mobject class="MAttributeContentReplacer" content="Delay">
+					<attribute name="value"/>
+				</mobject>
+			</converter>
+		</mobject>
+		<mobject class="MAttributeMatch" name="value">
+			<possiblecontent>
+				<condition content="Fuzz"/>
+				<condition content="MFuzz"/>
+			</possiblecontent>
+			<converter>
+				<mobject class="MAttributeContentReplacer" content="Fuzz">
+					<attribute name="value"/>
+				</mobject>
+			</converter>
+		</mobject>
+		<mobject class="MAttributeMatch" name="value">
+			<possiblecontent>
+				<condition content="Lofi"/>
+				<condition content="MLofi"/>
+			</possiblecontent>
+			<converter>
+				<mobject class="MAttributeContentReplacer" content="Lofi">
+					<attribute name="value"/>
+				</mobject>
+			</converter>
+		</mobject>
+		<mobject class="MAttributeMatch" name="value">
+			<possiblecontent>
+				<condition content="Reverb"/>
+				<condition content="MReverb"/>
+			</possiblecontent>
+			<converter>
+				<mobject class="MAttributeContentReplacer" content="Reverb">
+					<attribute name="value"/>
+				</mobject>
+			</converter>
+		</mobject>
+		<mobject class="MAttributeMatch" name="value">
+			<possiblecontent>
+				<condition content="Equalizer"/>
+				<condition content="MPeakEq"/>
+				<condition content="MEqualizer"/>
+			</possiblecontent>
+			<converter>
+				<mobject class="MAttributeContentReplacer" content="Equalizer">
+					<attribute name="value"/>
+				</mobject>
+			</converter>
+		</mobject>
+
+		<converter>
+			<mobject class="MElementRenamer" name="processor"/>
+			<mobject class="MAttribute2Element" newelementname="control" newattributeoldname="name" newattributeoldvalue="value">
+				<exclude name="value"/>
+			</mobject>
+		</converter>
+	</mobject>
+	
+	<mobject class="MElementMatch" name="sourceprocessor">
+		<mobject class="MAttributeMatch" name="value">
+			<possiblecontent>
+				<condition content="Saw"/>
+				<condition content="MSaw"/>
+			</possiblecontent>
+			<converter>
+				<mobject class="MAttributeContentReplacer" content="Saw">
+					<attribute name="value"/>
+				</mobject>
+			</converter>
+		</mobject>
+		<mobject class="MAttributeMatch" name="value">
+			<possiblecontent>
+				<condition content="Triangle"/>
+				<condition content="MTriangle"/>
+			</possiblecontent>
+			<converter>
+				<mobject class="MAttributeContentReplacer" content="Triangle">
+					<attribute name="value"/>
+				</mobject>
+			</converter>
+		</mobject>
+		<mobject class="MAttributeMatch" name="value">
+			<possiblecontent>
+				<condition content="Sine"/>
+				<condition content="MSine"/>
+			</possiblecontent>
+			<converter>
+				<mobject class="MAttributeContentReplacer" content="Sine">
+					<attribute name="value"/>
+				</mobject>
+			</converter>
+		</mobject>
+		<mobject class="MAttributeMatch" name="value">
+			<possiblecontent>
+				<condition content="Square"/>
+				<condition content="MSquare"/>
+			</possiblecontent>
+			<converter>
+				<mobject class="MAttributeContentReplacer" content="Square">
+					<attribute name="value"/>
+				</mobject>
+			</converter>
+		</mobject>
+		<mobject class="MAttributeMatch" name="value">
+			<possiblecontent>
+				<condition content="MultiOsc"/>
+				<condition content="MMultiOsc"/>
+			</possiblecontent>
+			<converter>
+				<mobject class="MAttributeContentReplacer" content="MultiOsc">
+					<attribute name="value"/>
+				</mobject>
+			</converter>
+		</mobject>
+		<mobject class="MAttributeMatch" name="value">
+			<possiblecontent>
+				<condition content="Wave"/>
+				<condition content="MWave"/>
+				<condition content="MWaveOsc"/>
+			</possiblecontent>
+			<converter>
+				<mobject class="MAttributeContentReplacer" content="Wave">
+					<attribute name="value"/>
+				</mobject>
+			</converter>
+		</mobject>
+		<mobject class="MAttributeMatch" name="value">
+			<possiblecontent>
+				<condition content="Organ"/>
+				<condition content="MOrgan"/>
+			</possiblecontent>
+			<converter>
+				<mobject class="MAttributeContentReplacer" content="Organ">
+					<attribute name="value"/>
+				</mobject>
+			</converter>
+		</mobject>
+		<mobject class="MAttributeMatch" name="value">
+			<possiblecontent>
+				<condition content="String"/>
+				<condition content="MString"/>
+			</possiblecontent>
+			<converter>
+				<mobject class="MAttributeContentReplacer" content="String">
+					<attribute name="value"/>
+				</mobject>
+			</converter>
+		</mobject>
+		<mobject class="MAttributeMatch" name="value">
+			<possiblecontent>
+				<condition content="Noise"/>
+				<condition content="MNoise"/>
+			</possiblecontent>
+			<converter>
+				<mobject class="MAttributeContentReplacer" content="Noise">
+					<attribute name="value"/>
+				</mobject>
+			</converter>
+		</mobject>
+		<converter>
+			<mobject class="MElementRenamer" name="sourceprocessor"/>
+			<mobject class="MAttribute2Element" newelementname="control" newattributeoldname="name" newattributeoldvalue="value">
+				<exclude name="value"/>
+			</mobject>
+		</converter>
+	</mobject>
+	
+	<mobject class="MElementMatch" name="channel">
+		<converter>
+			<mobject class="MAttribute2Element" newelementname="control" newattributeoldname="name" newattributeoldvalue="value"/>
+		</converter>
+	</mobject>
+	
+	<mobject class="MElementMatch" name="sequencer">
+		<converter>
+			<mobject class="MAttribute2Element" newelementname="control" newattributeoldname="name" newattributeoldvalue="value">
+				<exclude name="shuffle"/>
+				<exclude name="bpm"/>
+				<exclude name="leftMarker"/>
+				<exclude name="rightMarker"/>
+			</mobject>
+		</converter>
+	</mobject>
+	
+</mobject>
+

@@ -1,0 +1,13 @@
+<mobject bgcolor="d2b4b4" class="MFrameWnd" cx="0" cy="0" enabled="true" height="480" visible="true" width="640" x="0" y="0">
+	<children>
+	
+		<mobject class="MLabel" height="20" width="290" x="10" y="10" text="rendering, please wait..." centered="false" fgcolor="402020" bgcolor="d2b4b4"/>
+		
+		<mobject class="MProgressControl" height="20" value="0.5" visible="true" width="290" x="10" y="40" id="progress" fgcolor="ff0000" bgcolor="d2b4b4"/>
+		
+		<mobject class="MButton" height="20" visible="true" width="80" x="220" y="90" id="CANCEL" bgcolor="d2b4b4">
+			<mobject class="MTextButtonRenderer" text="Cancel" textcolor="402020" textcolordisabled="404040"/>
+		</mobject>
+
+	</children>
+</mobject>

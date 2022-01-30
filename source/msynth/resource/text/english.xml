@@ -1,0 +1,122 @@
+<mobject class="MTextResource">
+
+	<item id="QUIT" text="Really quit?"/>
+	<item id="DISABLED_IN_DEMO" text="Disabled in demo version!"/>
+	<item id="OVERWRITE" text="The file %s allready exists.\nShould it be overwritten?"/>
+	<item id="NO_WINDOW_SUPPORTING_COPY" text="No window supporting copy operations selected!"/>
+	<item id="NO_WINDOW_SUPPORTING_CUT" text="No window selected supporting cut operation!"/>
+	<item id="NO_WINDOW_SUPPORTING_PASTE" text="No window selected supporting paste operation!"/>
+	<item id="NO_WINDOW_SUPPORTING_DELETE" text="No window selected supporting delete operations!"/>
+	<item id="ERROR_STARTING_HELP" text="Could not start help!"/>
+	<item id="FILE_NOT_FOUND" text="The file %s could not be found!"/>
+	<item id="ERROR_LOADING_SONG" text="Error loading song %s !"/>
+	<item id="ERROR_CREATING_ARRANGE_VIEW" text="Fatal error: Arrange grid could not be created!"/>
+	<item id="DMO_LOCK_FAILED" text="DMO lock failed!"/>
+	<item id="DMO_FLUSH_FAILED" text="DMO flush failed!"/>
+	<item id="DMO_UNLOCK_FAILED" text="DMO unlock failed!"/>
+	<item id="ERROR_SAVING_SAMPLEBANK" text="Error saving samplebank %s:\n%s"/>
+	<item id="DELETE_CHANNEL" text="Do you really want to delete the selected channel?"/>
+	<item id="ERROR_SAVING_SAMPLE" text="Could not save sampe %s!"/>
+	<item id="INVALID_NOTELIST_ID" text="MBar found an unknown nodelist (ID=%s)!"/>
+	<item id="ERROR_CREATING_INSTRUMENT" text="The instrument %s could not be created!"/>
+	<item id="ERROR_PARSIN" text="Error parsing %s:\n%s"/>
+	<item id="ERROR_SAVING_PROPERTIES_IO" text=""/>
+	<item id="ERROR_LOADING_INSTRUMENT" text="The instrument number %s could not be loaded!"/>
+	<item id="ERROR_STREAMING" text="An error occured during wave export!"/>
+	<item id="ERROR_STARTING_SESSION" text="The export session could not be started:\n The output file %s could not be created!"/>
+	<item id="ERROR_WRITING_FILEHEADER_SESSION" text="Error writting fileheader for session!"/>
+	<item id="ERROR_CLOSING_FILE_SESSION" text="Error closing file for session!"/>
+	<item id="UNKNOWN_OSC_FOUND" text="During loading of a synthesizer,\na unknown oscilator tag was found: %s"/>
+	<item id="UNKOWN_PROC_FOUND" text="During loading of a synthesizer,\na unknown transformer tag was found: %s"/>
+	<item id="ERROR_WRITING_SYNTH" text="I/O error saving synthesizer!"/>
+	<item id="ERROR_WRITING_SYNTH_NG" text="Error saving synthesizer (perhaps the file allready exists and is writeprotected)"/>
+	<item id="UNKNOWN_VIEW_FOUND" text="Fatal error: An unkown view id was found (ID=%s)\nPlease consult MRoc Audiosolutions with this ID."/>
+	<item id="INTERNAL_STREAMING_FAILED" text="An internal error occuring in the streaming engine.\nPlease consult MRoc Audiosolutions."/>
+	<item id="INIT_DS_FAILED" text="Init Direct Sound failed!"/>
+	<item id="SET_COOP_FAILED" text="Setting Direct Sound cooperative level failed!"/>
+	<item id="INIT_2ND_BUFFER_FAILED" text="Direct Sound secundary soundbuffer initialisation failed!"/>
+	<item id="QUERY_NOTIFY_FAILED" text="Could not get interface Direct Sound IID_IDirectSoundNotify!"/>
+	<item id="SET_NOTIFY_FAILED" text="Could not set DirectSound notification!"/>
+	<item id="GET_1ST_BUFFER_FAILED" text="Getting pointer to primary buffer failed!"/>
+	<item id="SET_FORMAT_1ST_BUFFER_FAILED" text="Setting format of primary buffer failed!"/>
+	<item id="SET_PLAYPOS_FAILED" text="Could not set Direct Sound playposition!"/>
+	<item id="ZERO_DS_BUFFER_FAILED" text="Filling Direct Sound buffer with silence failed after start playing failed!"/>
+	<item id="DS_PLAYING_FAILED" text="Could not start Direct Sound playing!"/>
+	<item id="CREATING_UPDATETHREAD_FAILED" text="Failed to create update thread!\nPlease consult MRoc Audiosolutions."/>
+	<item id="UPDATE_THREAD_PRIO_FAILED" text="Could not set update thread's priority in AudioEngine!\nPlease consult MRoc Audiosolutions."/>
+	<item id="DS_STOP_FAILED" text="Could not stop playing Direct Sound buffer!"/>
+	<item id="DS_HANDLING_DS_NOTIFY_FAILED" text="Error handling DirectSound notifications!"/>
+	<item id="DS_RESTORE_BUFFER_FAILED" text="Could not restore Direct Sound buffer!"/>
+	<item id="ZERO_DS_BUFFER_FAILED2" text="Could not silent buffer after restoring!"/>
+	<item id="DS_GET_PLAYPOS_FAILED" text="Getting Direct Sound playposition failed!"/>
+	<item id="DS_LOCK_FAILED" text="Lock secundary buffer failed!"/>
+	<item id="DS_UNLOCK_FAILED" text="Unlock secundary buffer failed!"/>
+	<item id="DS_GET_BUF_STATE_FAILED" text="get buffer status failed!"/>
+	<item id="DMO_INIT_FAILED" text="DMO initialisation failed:\n%s"/>
+	<item id="DMO_GETPARAMCOUNT_FAILED" text="DMO failed GetParamCount:\n%s"/>
+	<item id="DMO_GETPARAMINFO_FAILED" text="DMO failed GetParamInfo:\n%s"/>
+	<item id="DMO_GETPARAM_FAILED" text="DMO failed GetParam:\n%s"/>
+	<item id="DMO_SETPARAM_FAILED" text="DMO SetParam failed!"/>
+	<item id="DMO_COCREATEINSTANCE_FAILED" text="DMO CoCreateInstance failed:\n%s"/>
+	<item id="DMO_FAILED_QUERY_IMEDIAOBJECTINPLACE" text="DMO failed querry interface (IID_IMediaObjectInPlace):\n%s"/>
+	<item id="DMO_SETINPUTTYPE_FAILED" text="DMO SetInputType failed:\n%s"/>
+	<item id="DMO_SETOUTPUTTYPE_FAILE" text="DMO SetutputType failed:\n%s"/>
+	<item id="DMO_QUERY_IMEDIAPARAMINFO_FAILED" text="DMO QuerryInterface (IID_IMediaParamInfo) failed:\n%s"/>
+	<item id="LIMITED_CHANNELCOUNT_LE" text="Channelcount is limited to 4 channels in MSynth LE"/>
+	<item id="RENDER_THREAD_PRIO_FAILED" text="Could not set rendering's thread priority.\nPlease consult MRoc Audiosolutions."/>
+	<item id="UPDATETHREAD_RELEASE_HANDLE_FAILED" text="UpdateThread failed closing its threads handle.\nPlease consult MRoc Audiosolutions."/>
+	<item id="INIT_SYNTH_FROM_XML_FAILED" text="Synthesizer could not initialize from XML!\nNo attributes were found."/>
+	<item id="IOERROR_SAVING" text="I/O error occured saving %s!"/>
+	<item id="NG_SAVING" text="Error writing file (not good):\n%s"/>
+	<item id="NO_ROOT_ERROR" text="Document has no root element!"/>
+	<item id="CREATING_COMP_BITMAP_FAILED" text="Error creating compatible bitmap in %s!"/>
+	<item id="OPEN_NOTEEDITOR_FAILED" text="Opening note editor failed!"/>
+	<item id="OPEN_NOTEEDITOR_FAILED" text="Opening note editor failed!"/>
+	<item id="NO_BARS_SELECTED" text="No bars selected!"/>
+	<item id="INVALID_PASTE_IN_BARGRID" text="A %s can not be pasted in the arrange grid!"/>
+	<item id="CLIPBOARD_EMPTY" text="The clipboard is empty, there is nothing to paste!"/>
+	<item id="INVALID_PASTE_IN_BEATBOXGRID" text="A %s can not be pasted in the beatbox grid.\nOnly beatbox notes can pasted in this window!"/>
+	<item id="ERROR_LOADING_SAMPLEBANK" text="Error loading samplebank!"/>
+	<item id="ERROR_SAVING_SAMPLEBANK2" text="Error saving samplebank!"/>
+	<item id="NUMBER_RANGE_EXC" text="Please enter a number between %s and %s!"/>
+	<item id="CENTERED_STRING_FAILED" text="MGuiUtils::paintCenteredString failed!"/>
+	<item id="PAINT_STRING_FAILED" text="MGuiUtils::PaintString failed!"/>
+	<item id="INVALID_PASTE_IN_SYNTHGRID" text="A %s can not be pasted in the synth grid!\nOnly synth notes can pasted in this window."/>
+	<item id="ERROR_OPENING_OUTPUTSTREAM" text="Error opening outputstream!"/>
+	<item id="ERROR_LOADING" text="Error loading %s:\n%s"/>
+	<item id="ERROR_SAVING" text="Error saving %s:\n%s"/>
+	<item id="ERROR_CREATING_FONT" text="Error creating font indirect in %s!\nPlease consult MRoc Audiosolutions."/>
+	<item id="ERROR_PARSING_LAYOUTFILE" text="Error parsing layoutfile %s!\nNo root element was found."/>
+	<item id="NOTEFACTORY_UNREG_ID" text="NoteFactory found an unregistered ID (ID=%s)\nPlease consult MRoc Audiosolutions."/>
+	<item id="NOTEFACTORY_UNREG_EDITORID" text="NoteFactory found an unregistered editor ID (EditorID=%1)\nPlease consult MRoc Audiosolutions."/>
+	<item id="WAVEOSC_ERROR_LOADING_SAMPLE" text="Waveosc could not load sample:\n%s"/>
+	<item id="DS_ENUM_DEVICE_FAILED" text="Error enumerating installed Direct Sound devices. (DirectSoundEnumerate failed)"/>
+	<item id="IIR_CREATE_FAILED" text="Error creating MIIR filter!\nPlease consult MRoc Audiosolutions."/>
+	<item id="ERROR_TERMINATE_XMLUTILS" text="Error terminating XMLUtils in %s!"/>
+	
+	<item id="TT_ARRANGE_EDIT_INSTRUMENT_BUTTON" text="edit instrument"/>
+	<item id="TT_ARRANGE_SELECT_BUTTON" text="SELECT+ mode, bars can be selected and moved, a bar's note editor can be opened by a doubleclick."/>
+	<item id="TT_ARRANGE_SELECT_BUTTON" text="SELECT+ mode, bars can be selected and moved, a bar's note editor can be opened by a doubleclick."/>
+	<item id="TT_ARRANGE_DRAW_BUTTON" text="DRAW mode, bars can be created and modified."/>
+	<item id="TT_ARRANGE_GLOW_BUTTON" text="GLOW mode, two bars can be glown together."/>
+	<item id="TT_ARRANGE_CUT_BUTTON" text="CUT mode, a bar can be cut into two bars."/>
+	<item id="TT_ARRANGE_RESOLUTION_COMBO" text="bar resolution, notes per bar"/>
+	<item id="TT_ARRANGE_PLAY_BUTTON" text="Play"/>
+	<item id="TT_ARRANGE_STOPY_BUTTON" text="Stop"/>
+	<item id="TT_ARRANGE_EXPORT_BUTTON" text="Export to wave - in a live session or from left to right marker"/>
+	<item id="TT_ARRANGE_RECORD_BUTTON" text="Control Automation - records all slider events"/>
+	<item id="TT_SYNTH_EDITOR_UP_BUTTON" text="Moves the selected transformer one step up"/>
+	<item id="TT_SYNTH_EDITOR_DOWN_BUTTON" text="Moves the selected transformer one step down"/>
+	<item id="TT_SYNTH_EDITOR_DELETE_BUTTON" text="Deletes the selected transformer"/>
+	<item id="TT_SYNTH_EDITOR_CREATE_BUTTON" text="Creates a new transformer"/>
+	<item id="TT_SYNTH_NOTEEDITOR_SELECT_BUTTON" text="SELECT mode, notes can be selected and moved"/>
+	<item id="TT_SYNTH_NOTEEDITOR_DRAW_BUTTON" text="DRAW mode, notes can be created and modified"/>
+	<item id="TT_WAVEOSC_EDITOR_LOAD_BUTTON" text="load a sample wave as oscilator (16bit 44.1kHz PCM Wave)"/>
+	<item id="TT_WAVEOSC_EDITOR_SAVE_BUTTON" text="save the sample wave (mono 16bit 44.1kHz PCM Wave)"/>
+	<item id="TT_WAVEOSC_EDITOR_LOOP_BUTTON" text="loops the sample"/>
+	<item id="TT_WAVEOSC_EDITOR_REV_BUTTON" text="reverse sample"/>
+	<item id="TT_BEATBOX_EDITOR_SELECT_BUTTON" text="Selects sample no. %i"/>
+	<item id="TT_BEATBOX_EDITOR_SAVE_BUTTON" text="save sample no. %i as wave (16bit 44.1kHz PCM Wave)"/>
+	<item id="TT_BEATBOX_EDITOR_LOAD_BUTTON" text="load sample no. %i from a wave file (16bit 44.1kHz PCM Wave)"/>
+			
+</mobject>

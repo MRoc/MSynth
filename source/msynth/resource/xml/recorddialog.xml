@@ -1,0 +1,24 @@
+<mobject bgcolor="d2b4b4" class="MFrameWnd" cx="0" cy="0" enabled="true" height="480" visible="true" width="640" x="0" y="0">
+	<children>
+	
+		<mobject class="MLabel" height="20" width="290" x="10" y="10" text="rendering mode:" centered="false" fgcolor="402020" bgcolor="d2b4b4"/>
+		
+		<mobject class="MToggleButton" height="20" visible="true" width="290" x="10" y="40" id="left2right" bgcolor="d2b4b4">
+			<mobject class="MRadioButtonRenderer" text="render song (from left to right loop marker)" textcolor="402020" textcolordisabled="404040"/>
+		</mobject>
+		
+		<mobject class="MToggleButton" height="20" visible="true" width="290" x="10" y="70" id="session" bgcolor="d2b4b4">
+			<mobject class="MRadioButtonRenderer" text="record live session (live streaming to disk)" textcolor="402020" textcolordisabled="404040"/>
+		</mobject>
+		
+		<mobject class="MLabel" height="20" width="200" x="10" y="150" text="44100kHz/16bit/stereo PCM wave" centered="false" fgcolor="402020" bgcolor="d2b4b4"/>
+		
+		<mobject class="MButton" height="20" visible="true" width="80" x="220" y="120" id="OK" bgcolor="d2b4b4">
+			<mobject class="MTextButtonRenderer" text="OK" textcolor="402020" textcolordisabled="404040"/>
+		</mobject>
+		<mobject class="MButton" height="20" visible="true" width="80" x="220" y="150" id="CANCEL" bgcolor="d2b4b4">
+			<mobject class="MTextButtonRenderer" text="Cancel" textcolor="402020" textcolordisabled="404040"/>
+		</mobject>
+
+	</children>
+</mobject>

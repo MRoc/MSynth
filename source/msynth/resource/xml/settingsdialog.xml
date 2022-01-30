@@ -1,0 +1,25 @@
+<mobject bgcolor="d2b4b4" class="MFrameWnd" cx="0" cy="0" enabled="true" height="480" visible="true" width="640" x="0" y="0">
+	<children>
+	
+		<mobject class="MLabel" height="20" width="220" x="10" y="10" text="audiosettings:" centered="false" fgcolor="402020" bgcolor="d2b4b4"/>	
+	
+		<mobject class="MLabel" height="20" width="80" x="10" y="40" text="DX Device" centered="false" fgcolor="402020" bgcolor="d2b4b4"/>
+		<mobject class="MComboBox" height="20" visible="true" width="130" x="100" y="40" id="dxCombo"/>
+		
+		<mobject class="MLabel" height="20" width="80" x="10" y="70" text="Bufferlength" centered="false" fgcolor="402020" bgcolor="d2b4b4"/>
+		<mobject class="MComboBox" height="20" visible="true" width="130" x="100" y="70" id="blCombo"/>
+		
+		<mobject class="MLabel" height="20" width="80" x="10" y="100" text="Sticky focus" centered="false" fgcolor="402020" bgcolor="d2b4b4"/>
+		<mobject class="MToggleButton" height="20" visible="true" width="130" x="100" y="100" id="sfButton" bgcolor="d2b4b4">
+			<mobject class="MCheckBoxRenderer"/>
+		</mobject>
+		
+		<mobject class="MButton" height="20" visible="true" width="80" x="150" y="150" id="OK" bgcolor="d2b4b4">
+			<mobject class="MTextButtonRenderer" text="OK" textcolor="402020" textcolordisabled="404040"/>
+		</mobject>
+		<mobject class="MButton" height="20" visible="true" width="80" x="150" y="180" id="CANCEL" bgcolor="d2b4b4">
+			<mobject class="MTextButtonRenderer" text="Cancel" textcolor="402020" textcolordisabled="404040"/>
+		</mobject>
+
+	</children>
+</mobject>

@@ -1,0 +1,69 @@
+<!--
+
+#define ID_LABEL_SRC			1
+#define ID_LABEL_TRANSFORMER	2
+#define ID_BUTTON_UP			3
+#define ID_BUTTON_DOWN			4
+#define ID_BUTTON_REMOVE		5
+#define ID_BUTTON_ADD			6
+#define ID_BUTTON_OK			7
+#define ID_COMBO_OSC			8
+#define ID_COMBO_TRANSFORMER	9
+#define ID_LISTVIEW_TRANSFORMER	10
+
+-->
+
+<mobject class="MLayout">
+	<mobject class="MLayoutCol" sizing="HORIZONTAL">
+		<children>
+			<mobject class="MLayoutRow" align="CENTER" sizing="HORIZONTAL">
+				<children>
+					<mobject class="MLayoutWnd" sizing="FIXED" id="label.osc"/>
+					<mobject class="MLayoutWnd" sizing="HORIZONTAL" id="combo.osc"/>
+				</children>
+				<insets>
+					<mobject class="MInsets" left="5" bottom="5" top="5" right="5"/>
+				</insets>
+			</mobject>
+			<mobject class="MLayoutRow" align="TOP" sizing="BOTH">
+				<children>
+					<mobject class="MLayoutCol" align="TOP">
+						<children>
+							<mobject class="MLayoutWnd" id="label.transformer"/>
+							<mobject class="MLayoutWnd" id="button.up"/>
+							<mobject class="MLayoutWnd" id="button.down"/>
+							<mobject class="MLayoutWnd" id="button.remove"/>
+						</children>
+						<insets>
+							<mobject class="MInsets" left="0" bottom="5" top="5" right="5"/>
+						</insets>
+					</mobject>
+					<mobject class="MLayoutWnd" sizing="BOTH" id="listview.transformer"/>
+				</children>
+				<insets>
+					<mobject class="MInsets" left="5" bottom="5" top="5" right="5"/>
+				</insets>
+			</mobject>
+			<mobject class="MLayoutRow" align="CENTER" sizing="HORIZONTAL">
+				<children>
+					<mobject class="MLayoutWnd" id="button.add"/>
+					<mobject class="MLayoutWnd" sizing="HORIZONTAL" id="combo.transformer"/>
+				</children>
+				<insets>
+					<mobject class="MInsets" left="5" bottom="5" top="5" right="5"/>
+				</insets>
+			</mobject>
+			<mobject class="MLayoutCol" align="RIGHT" sizing="HORIZONTAL">
+				<children>
+					<mobject class="MLayoutWnd" id="button.ok"/>
+				</children>
+				<insets>
+					<mobject class="MInsets" left="5" bottom="5" top="5" right="5"/>
+				</insets>
+			</mobject>
+		</children>
+		<insets>
+			<mobject class="MInsets" left="10" bottom="10" top="10" right="10"/>
+		</insets>
+	</mobject>
+</mobject>

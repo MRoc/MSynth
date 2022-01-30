@@ -1,0 +1,221 @@
+<!-- converts 1.3 to 1.4 -->
+<mobject class="MTreeConverterDocument">
+
+	<!-- convert osci names to real class names -->
+	<mobject class="MElementMatch" name="sourceprocessor">
+		<mobject class="MAttributeMatch" name="value">
+			<possiblecontent>
+				<condition content="Saw"/>
+				<condition content="MSaw"/>
+			</possiblecontent>
+			<converter>
+				<mobject class="MAttributeContentReplacer" content="MOscSaw">
+					<attribute name="value"/>
+				</mobject>
+			</converter>
+		</mobject>
+		<mobject class="MAttributeMatch" name="value">
+			<possiblecontent>
+				<condition content="Triangle"/>
+				<condition content="MTriangle"/>
+			</possiblecontent>
+			<converter>
+				<mobject class="MAttributeContentReplacer" content="MOscTriangle">
+					<attribute name="value"/>
+				</mobject>
+			</converter>
+		</mobject>
+		<mobject class="MAttributeMatch" name="value">
+			<possiblecontent>
+				<condition content="Sine"/>
+				<condition content="MSine"/>
+			</possiblecontent>
+			<converter>
+				<mobject class="MAttributeContentReplacer" content="MOscSine">
+					<attribute name="value"/>
+				</mobject>
+			</converter>
+		</mobject>
+		<mobject class="MAttributeMatch" name="value">
+			<possiblecontent>
+				<condition content="Square"/>
+				<condition content="MSquare"/>
+			</possiblecontent>
+			<converter>
+				<mobject class="MAttributeContentReplacer" content="MOscSquare">
+					<attribute name="value"/>
+				</mobject>
+			</converter>
+		</mobject>
+		<mobject class="MAttributeMatch" name="value">
+			<possiblecontent>
+				<condition content="MultiOsc"/>
+			</possiblecontent>
+			<converter>
+				<mobject class="MAttributeContentReplacer" content="MMultiOsc">
+					<attribute name="value"/>
+				</mobject>
+			</converter>
+		</mobject>
+		<mobject class="MAttributeMatch" name="value">
+			<possiblecontent>
+				<condition content="Wave"/>
+				<condition content="MWave"/>
+			</possiblecontent>
+			<converter>
+				<mobject class="MAttributeContentReplacer" content="MWaveOsc">
+					<attribute name="value"/>
+				</mobject>
+			</converter>
+		</mobject>
+		<mobject class="MAttributeMatch" name="value">
+			<possiblecontent>
+				<condition content="Organ"/>
+			</possiblecontent>
+			<converter>
+				<mobject class="MAttributeContentReplacer" content="MOrgan">
+					<attribute name="value"/>
+				</mobject>
+			</converter>
+		</mobject>
+		<mobject class="MAttributeMatch" name="value">
+			<possiblecontent>
+				<condition content="String"/>
+				<condition content="MString"/>
+			</possiblecontent>
+			<converter>
+				<mobject class="MAttributeContentReplacer" content="MOscString">
+					<attribute name="value"/>
+				</mobject>
+			</converter>
+		</mobject>
+		<mobject class="MAttributeMatch" name="value">
+			<possiblecontent>
+				<condition content="Noise"/>
+			</possiblecontent>
+			<converter>
+				<mobject class="MAttributeContentReplacer" content="MNoise">
+					<attribute name="value"/>
+				</mobject>
+			</converter>
+		</mobject>
+	</mobject>
+	
+	<!-- convert transformer names to real class names, danger with DMO's -->
+	<mobject class="MElementMatch" name="processor">
+		<mobject class="MAttributeMatch" name="value">
+			<possiblecontent>
+				<condition content="Envelope ADSR"/>
+				<condition content="Envelope"/>
+			</possiblecontent>
+			<converter>
+				<mobject class="MAttributeContentReplacer" content="MEnvelope">
+					<attribute name="value"/>
+				</mobject>
+			</converter>
+		</mobject>
+		<mobject class="MAttributeMatch" name="value">
+			<possiblecontent>
+				<condition content="Filter"/>
+				<condition content="MFilter"/>
+				<condition content="M24dbFilter"/>
+			</possiblecontent>
+			<converter>
+				<mobject class="MAttributeContentReplacer" content="MIIR">
+					<attribute name="value"/>
+				</mobject>
+			</converter>
+		</mobject>
+		<mobject class="MAttributeMatch" name="value">
+			<possiblecontent>
+				<condition content="Delay"/>
+			</possiblecontent>
+			<converter>
+				<mobject class="MAttributeContentReplacer" content="MDelay">
+					<attribute name="value"/>
+				</mobject>
+			</converter>
+		</mobject>
+		<mobject class="MAttributeMatch" name="value">
+			<possiblecontent>
+				<condition content="Fuzz"/>
+			</possiblecontent>
+			<converter>
+				<mobject class="MAttributeContentReplacer" content="MFuzz">
+					<attribute name="value"/>
+				</mobject>
+			</converter>
+		</mobject>
+		<mobject class="MAttributeMatch" name="value">
+			<possiblecontent>
+				<condition content="Lofi"/>
+			</possiblecontent>
+			<converter>
+				<mobject class="MAttributeContentReplacer" content="MLofi">
+					<attribute name="value"/>
+				</mobject>
+			</converter>
+		</mobject>
+		<mobject class="MAttributeMatch" name="value">
+			<possiblecontent>
+				<condition content="Reverb"/>
+			</possiblecontent>
+			<converter>
+				<mobject class="MAttributeContentReplacer" content="MReverb">
+					<attribute name="value"/>
+				</mobject>
+			</converter>
+		</mobject>
+		<mobject class="MAttributeMatch" name="value">
+			<possiblecontent>
+				<condition content="Equalizer"/>
+				<condition content="MEqualizer"/>
+			</possiblecontent>
+			<converter>
+				<mobject class="MAttributeContentReplacer" content="MPeakEq">
+					<attribute name="value"/>
+				</mobject>
+			</converter>
+		</mobject>
+		
+		<!-- set dmo name as new attribute and convert class name to MDMOWrapper -->
+		<mobject class="MAttributeMatch" name="value" matchingtype="BEGIN">
+			<possiblecontent>
+				<condition content="DMO-"/>
+			</possiblecontent>
+			<converter>
+				<mobject class="MAttributeSubStr2Attribute" matchingtype="END" index="0" attributename="value" newattributename="type"/>
+				<mobject class="MAttributeContentReplacer" content="MDMOWrapper">
+					 <attribute name="value"/>
+				</mobject>
+			</converter>
+		</mobject>
+	</mobject>
+	
+	<!-- searchs for synthesizer -->
+	<mobject class="MElementMatch" name="source">
+		<mobject class="MChildElementEnumeration">
+			<!-- search for processors in synthesizer -->
+			<mobject class="MElementMatch" name="processor">
+				<converter>
+					<!-- add attribute channelcount = 1 -->
+					<mobject class="MAttributeAdder" name="channelcount" content="1"/>
+				</converter>
+			</mobject>
+		</mobject>
+	</mobject>
+	
+	<!-- search fx rack effect -->
+	<mobject class="MElementMatch" name="fx">
+		<mobject class="MChildElementEnumeration">
+			<!-- search for processors in fx rack -->
+			<mobject class="MElementMatch" name="processor">
+				<converter>
+					<!-- add attribute channelcount = 2 -->
+					<mobject class="MAttributeAdder" name="channelcount" content="2"/>
+				</converter>
+			</mobject>
+		</mobject>
+	</mobject>
+	
+</mobject>

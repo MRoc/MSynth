@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="US-ASCII"?>
+<mobject class="MTreeConverterDocument">
+<!-- converts 1.0 to 1.1 -->
+
+	<mobject class="MElementMatch" name="sequencer">
+		<old name="seq"/>
+		<converter>
+			<mobject class="MElementRenamer" name="sequencer"/>
+			<mobject class="MInt2FloatConverter" name="Volume" a="0.001" t="0.0" min="0.0" max="1.0">
+				<old name="vol"/>		
+			</mobject>
+			<mobject class="MInt2FloatConverter" name="Pan" a="0.005" t="0.0" min="0.0" max="1.0">
+				<old name="pan"/>		
+			</mobject>
+			<mobject class="MInt2FloatConverter" name="High" a="0.12" t="-12.0" min="-12.0" max="12.0">
+				<old name="high"/>		
+			</mobject>
+			<mobject class="MInt2FloatConverter" name="Low" a="0.12" t="-12.0" min="-12.0" max="12.0">
+				<old name="low"/>		
+			</mobject>
+			<mobject class="MInt2FloatConverter" name="Fx1" a="0.005" t="0.0" min="0.0" max="1.0">
+				<old name="fx1"/>		
+			</mobject>
+			<mobject class="MInt2FloatConverter" name="Fx2" a="0.005" t="0.0" min="0.0" max="1.0">
+				<old name="fx2"/>		
+			</mobject>
+			<mobject class="MInt2FloatConverter" name="Fx3" a="0.005" t="0.0" min="0.0" max="1.0">
+				<old name="fx3"/>		
+			</mobject>
+			<mobject class="MInt2FloatConverter" name="Fx4" a="0.005" t="0.0" min="0.0" max="1.0">
+				<old name="fx4"/>		
+			</mobject>		
+			<mobject class="MInt2FloatConverter" name="Eq" a="1.0" t="0.0" min="0.0" max="1.0">
+				<old name="eq"/>		
+			</mobject>	
+		</converter>
+	</mobject>
+	
+	<mobject class="MElementMatch" name="source">
+		<old name="MSoundSource"/>
+		<converter>
+			<mobject class="MElementRenamer" name="source"/>
+			<mobject class="MInt2FloatConverter" name="Volume" a="0.001" t="0.0" min="0.0" max="1.0">
+				<old name="vol"/>		
+			</mobject>
+			<mobject class="MInt2FloatConverter" name="Pan" a="0.005" t="0.0" min="0.0" max="1.0">
+				<old name="pan"/>		
+			</mobject>
+			<mobject class="MInt2FloatConverter" name="High" a="0.12" t="-12.0" min="-12.0" max="12.0">
+				<old name="high"/>		
+			</mobject>
+			<mobject class="MInt2FloatConverter" name="Low" a="0.12" t="-12.0" min="-12.0" max="12.0">
+				<old name="low"/>		
+			</mobject>
+			<mobject class="MInt2FloatConverter" name="Fx1" a="0.005" t="0.0" min="0.0" max="1.0">
+				<old name="fx1"/>		
+			</mobject>
+			<mobject class="MInt2FloatConverter" name="Fx2" a="0.005" t="0.0" min="0.0" max="1.0">
+				<old name="fx2"/>		
+			</mobject>
+			<mobject class="MInt2FloatConverter" name="Fx3" a="0.005" t="0.0" min="0.0" max="1.0">
+				<old name="fx3"/>		
+			</mobject>
+			<mobject class="MInt2FloatConverter" name="Fx4" a="0.005" t="0.0" min="0.0" max="1.0">
+				<old name="fx4"/>		
+			</mobject>
+			<mobject class="MInt2FloatConverter" name="Eq" a="1.0" t="0.0" min="0.0" max="1.0">
+				<old name="eq"/>		
+			</mobject>	
+		</converter>	
+	</mobject>
+	
+	<mobject class="MElementMatch" name="channel">
+		<converter>
+			<mobject class="MInt2FloatConverter" name="Volume" a="0.005" t="0.0" min="0.0" max="1.0"/>
+			<mobject class="MInt2FloatConverter" name="Panorama" a="0.005" t="0.0" min="0.0" max="1.0"/>
+			<mobject class="MInt2FloatConverter" name="Pitch" a="0.005" t="0.0" min="0.0" max="1.0"/>		
+		</converter>	
+	</mobject>
+	
+	<mobject class="MElementMatch" name="bbmsg">
+		<converter>
+			<mobject class="MInt2FloatConverter" name="vol" a="0.005" t="0.0" min="0.0" max="1.0"/>
+		</converter>	
+	</mobject>
+	
+	<mobject class="MElementMatch" name="dsn">
+		<converter>
+			<mobject class="MInt2FloatConverter" name="volume" a="0.005" t="0.0" min="0.0" max="1.0"/>
+		</converter>	
+	</mobject>
+	
+	<mobject class="MElementMatch" name="processor">
+		<old name="MSoundTransformator"/>
+		<old name="MTransformator"/>
+		<mobject class="MAttributeMatch" name="value">
+			<possiblecontent>
+				<condition content="Envelope ADSR"/>
+				<condition content="Envelope"/>
+				<condition content="MEnvelope"/>
+			</possiblecontent>
+			<converter>
+				<mobject class="MAttributeContentReplacer" content="Envelope ADSR">
+					<attribute name="value"/>
+				</mobject>
+				<mobject class="MInt2FloatConverter" name="Attack" a="100" t="10.0" min="10.0" max="20000.0"/>
+				<mobject class="MInt2FloatConverter" name="Decay" a="399.95" t="10.0" min="10.0" max="80000.0"/>
+				<mobject class="MInt2FloatConverter" name="Release" a="399.95" t="10.0" min="10.0" max="80000.0"/>
+				<mobject class="MInt2FloatConverter" name="Sustain" a="0.005" t="0.0" min="0.0" max="1.0">
+					<old name="Substain"/>
+				</mobject>
+			</converter>
+		</mobject>
+		<mobject class="MAttributeMatch" name="value">
+			<possiblecontent>
+				<condition content="Filter"/>
+				<condition content="MFilter"/>
+				<condition content="M24dbFilter"/>
+			</possiblecontent>
+			<converter>
+				<mobject class="MAttributeContentReplacer" content="Filter">
+					<attribute name="value"/>
+				</mobject>
+				<mobject class="MInt2FloatConverter" name="Cutoff" a="0.525" t="1.0" min="20.0" max="21000.0" quad="1"/>
+				<mobject class="MInt2FloatConverter" name="Resonance" a="0.05" t="1.0" min="1.0" max="21.0"/>
+				<mobject class="MInt2FloatConverter" name="Attack" a="99.5" t="1.0" min="1.0" max="20000.0"/>
+				<mobject class="MInt2FloatConverter" name="Decay" a="99.5" t="1.0" min="1.0" max="20000.0"/>
+				<mobject class="MInt2FloatConverter" name="Release" a="99.5" t="1.0" min="1.0" max="20000.0"/>
+				<mobject class="MInt2FloatConverter" name="Offset" a="0.01" t="0.01" min="0.01" max="2.0"/>
+				<mobject class="MInt2FloatConverter" name="Gain" a="0.01" t="0.01" min="0.01" max="2.0"/>
+				<mobject class="MInt2FloatConverter" name="Sustain" a="0.01" t="0.01" min="0.01" max="2.0">
+					<old name="Substain"/>
+				</mobject>
+				<mobject class="MInt2FloatConverter" name="Frequency" a="0.15" t="0.0" min="0.0" max="30.0">
+					<old name="LfoFreq"/>
+				</mobject>
+				<mobject class="MInt2FloatConverter" name="Bandwidth" a="0.005" t="0.0" min="0.0" max="1.0">
+					<old name="LfoBandwidth"/>
+				</mobject>			
+				<mobject class="MAttributeRenamer" name="Lfo">
+					<old name="LfoOn"/>
+				</mobject>
+				<mobject class="MAttributeRenamer" name="Env">
+					<old name="EnvOn"/>
+				</mobject>		
+			</converter>
+		</mobject>
+		<mobject class="MAttributeMatch" name="value">
+			<possiblecontent>
+				<condition content="MoogFilter"/>
+				<condition content="MMoogFilter"/>
+			</possiblecontent>
+			<converter>
+				<mobject class="MAttributeContentReplacer" content="MoogFilter">
+					<attribute name="value"/>
+				</mobject>
+				<mobject class="MInt2FloatConverter" name="Cutoff" a="89.9" t="20.0" min="20.0" max="18000.0"/>
+				<mobject class="MInt2FloatConverter" name="Resonance" a="1.0" t="1.0" min="1.0" max="200.0"/>
+				<mobject class="MInt2FloatConverter" name="Attack" a="400" t="1.0" min="1.0" max="80000.0"/>
+				<mobject class="MInt2FloatConverter" name="Decay" a="400" t="1.0" min="1.0" max="80000.0"/>
+				<mobject class="MInt2FloatConverter" name="Release" a="400" t="1.0" min="1.0" max="80000.0"/>
+				<mobject class="MInt2FloatConverter" name="Offset" a="0.00995" t="0.01" min="0.01" max="2.0"/>
+				<mobject class="MInt2FloatConverter" name="Gain" a="0.00995" t="0.01" min="0.01" max="2.0"/>
+				<mobject class="MInt2FloatConverter" name="Sustain" a="0.00995" t="0.01" min="0.01" max="2.0">
+					<old name="Substain"/>
+				</mobject>	
+			</converter>
+		</mobject>
+		<mobject class="MAttributeMatch" name="value">
+			<possiblecontent>
+				<condition content="Delay"/>
+				<condition content="MDelay"/>
+			</possiblecontent>
+			<converter>
+				<mobject class="MAttributeContentReplacer" content="Delay">
+					<attribute name="value"/>
+				</mobject>
+				<mobject class="MInt2FloatConverter" name="Mix" a="0.01" t="0.0" min="0.0" max="1.0"/>
+				<mobject class="MInt2FloatConverter" name="DelayTime" a="4.9" t="20.0" min="20.0" max="1000.0"/>
+				<mobject class="MInt2FloatConverter" name="Feedback" a="0.01" t="0.0" min="0.0" max="1.0"/>
+			</converter>
+		</mobject>
+		<mobject class="MAttributeMatch" name="value">
+			<possiblecontent>
+				<condition content="Fuzz"/>
+				<condition content="MFuzz"/>
+			</possiblecontent>
+			<converter>
+				<mobject class="MAttributeContentReplacer" content="Fuzz">
+					<attribute name="value"/>
+				</mobject>
+				<mobject class="MInt2FloatConverter" name="Mix" a="0.01" t="0.0" min="0.0" max="1.0"/>
+				<mobject class="MInt2FloatConverter" name="Boost" a="0.01" t="0.0" min="0.0" max="0.99"/>
+			</converter>
+		</mobject>
+		<mobject class="MAttributeMatch" name="value">
+			<possiblecontent>
+				<condition content="Lofi"/>
+				<condition content="MLofi"/>
+			</possiblecontent>
+			<converter>
+				<mobject class="MAttributeContentReplacer" content="Lofi">
+					<attribute name="value"/>
+				</mobject>
+				<mobject class="MInt2FloatConverter" name="Mix" a="0.001" t="0.0" min="0.0" max="1.0"/>
+			</converter>
+		</mobject>
+		<mobject class="MAttributeMatch" name="value">
+			<possiblecontent>
+				<condition content="Reverb"/>
+				<condition content="MReverb"/>
+			</possiblecontent>
+			<converter>
+				<mobject class="MAttributeContentReplacer" content="Reverb">
+					<attribute name="value"/>
+				</mobject>
+				<mobject class="MInt2FloatConverter" name="Mix" a="0.01" t="0.0" min="0.0" max="1.0"/>
+				<mobject class="MInt2FloatConverter" name="Input" a="0.01" t="0.0" min="0.0" max="1.0"/>
+				<mobject class="MInt2FloatConverter" name="Decay" a="0.0075" t="0.5" min="0.5" max="2.0"/>
+				<mobject class="MInt2FloatConverter" name="Feedback" a="0.01" t="0.0" min="0.01" max="1.0"/>
+				<mobject class="MInt2FloatConverter" name="Lowpass" a="0.01" t="0.0" min="0.01" max="1.0"/>
+			</converter>
+		</mobject>
+		<mobject class="MAttributeMatch" name="value">
+			<possiblecontent>
+				<condition content="Equalizer"/>
+				<condition content="MPeakEq"/>
+				<condition content="MEqualizer"/>
+			</possiblecontent>
+			<converter>
+				<mobject class="MAttributeContentReplacer" content="Equalizer">
+					<attribute name="value"/>
+				</mobject>
+				<mobject class="MInt2FloatConverter" name="f80Hz" a="0.12" t="-12.0" min="-12.0" max="12.0"/>
+				<mobject class="MInt2FloatConverter" name="f120Hz" a="0.12" t="-12.0" min="-12.0" max="12.0"/>
+				<mobject class="MInt2FloatConverter" name="f240Hz" a="0.12" t="-12.0" min="-12.0" max="12.0"/>
+				<mobject class="MInt2FloatConverter" name="f1000Hz" a="0.12" t="-12.0" min="-12.0" max="12.0"/>
+				<mobject class="MInt2FloatConverter" name="f4000Hz" a="0.12" t="-12.0" min="-12.0" max="12.0"/>
+				<mobject class="MInt2FloatConverter" name="f8000Hz" a="0.12" t="-12.0" min="-12.0" max="12.0"/>
+				<mobject class="MInt2FloatConverter" name="f16000Hz" a="0.12" t="-12.0" min="-12.0" max="12.0"/>
+			</converter>
+		</mobject>
+		<converter>
+			<mobject class="MElementRenamer" name="processor"/>
+		</converter>
+	</mobject>
+
+	<mobject class="MElementMatch" name="sourceprocessor">
+		<old name="MOsc"/>
+		<mobject class="MAttributeMatch" name="value">
+			<possiblecontent>
+				<condition content="Saw"/>
+				<condition content="MSaw"/>
+			</possiblecontent>
+			<converter>
+				<mobject class="MAttributeContentReplacer" content="Saw">
+					<attribute name="value"/>
+				</mobject>
+				<mobject class="MInt2FloatConverter" name="Volume" a="0.005" t="0.0" min="0.0" max="1.0"/>
+				<mobject class="MInt2FloatConverter" name="Tune" a="0.005" t="0.0" min="0.0" max="1.0"/>
+				<mobject class="MInt2FloatConverter" name="Phase" a="0.005" t="0.0" min="0.0" max="1.0"/>
+			</converter>
+		</mobject>
+		<mobject class="MAttributeMatch" name="value">
+			<possiblecontent>
+				<condition content="Triangle"/>
+				<condition content="MTriangle"/>
+			</possiblecontent>
+			<converter>
+				<mobject class="MAttributeContentReplacer" content="Triangle">
+					<attribute name="value"/>
+				</mobject>
+				<mobject class="MInt2FloatConverter" name="Volume" a="0.005" t="0.0" min="0.0" max="1.0"/>
+				<mobject class="MInt2FloatConverter" name="Tune" a="0.005" t="0.0" min="0.0" max="1.0"/>
+				<mobject class="MInt2FloatConverter" name="Phase" a="0.005" t="0.0" min="0.0" max="1.0"/>	
+			</converter>
+		</mobject>
+		<mobject class="MAttributeMatch" name="value">
+			<possiblecontent>
+				<condition content="Sine"/>
+				<condition content="MSine"/>
+			</possiblecontent>
+			<converter>
+				<mobject class="MAttributeContentReplacer" content="Sine">
+					<attribute name="value"/>
+				</mobject>
+				<mobject class="MInt2FloatConverter" name="Volume" a="0.005" t="0.0" min="0.0" max="1.0"/>
+				<mobject class="MInt2FloatConverter" name="Tune" a="0.005" t="0.0" min="0.0" max="1.0"/>
+				<mobject class="MInt2FloatConverter" name="Phase" a="0.005" t="0.0" min="0.0" max="1.0"/>	
+			</converter>
+		</mobject>
+		<mobject class="MAttributeMatch" name="value">
+			<possiblecontent>
+				<condition content="Square"/>
+				<condition content="MSquare"/>
+			</possiblecontent>
+			<converter>
+				<mobject class="MAttributeContentReplacer" content="Square">
+					<attribute name="value"/>
+				</mobject>
+				<mobject class="MInt2FloatConverter" name="Volume" a="0.005" t="0.0" min="0.0" max="1.0"/>
+				<mobject class="MInt2FloatConverter" name="Tune" a="0.005" t="0.0" min="0.0" max="1.0"/>
+				<mobject class="MInt2FloatConverter" name="Phase" a="0.005" t="0.0" min="0.0" max="1.0"/>		
+				<mobject class="MInt2FloatConverter" name="Width" a="0.0025" t="0.5" min="0.5" max="0.99"/>
+			</converter>
+		</mobject>
+		<mobject class="MAttributeMatch" name="value">
+			<possiblecontent>
+				<condition content="MultiOsc"/>
+				<condition content="MMultiOsc"/>
+			</possiblecontent>
+			<converter>
+				<mobject class="MAttributeContentReplacer" content="MultiOsc">
+					<attribute name="value"/>
+				</mobject>
+			</converter>
+		</mobject>
+		<mobject class="MAttributeMatch" name="value" condition="Wave">
+			<possiblecontent>
+				<condition content="Wave"/>
+				<condition content="MWave"/>
+				<condition content="MWaveOsc"/>
+			</possiblecontent>
+			<converter>
+				<mobject class="MAttributeContentReplacer" content="Wave">
+					<attribute name="value"/>
+				</mobject>
+				<mobject class="MInt2FloatConverter" name="Volume" a="0.005" t="0.0" min="0.0" max="1.0"/>
+				<mobject class="MInt2FloatConverter" name="Tune" a="0.005" t="0.0" min="0.0" max="1.0"/>	
+			</converter>
+		</mobject>
+		<mobject class="MAttributeMatch" name="value">
+			<possiblecontent>
+				<condition content="Organ"/>
+				<condition content="MOrgan"/>
+			</possiblecontent>
+			<converter>
+				<mobject class="MAttributeContentReplacer" content="Organ">
+					<attribute name="value"/>
+				</mobject>
+				<mobject class="MInt2FloatConverter" name="Volume" a="0.005" t="0.0" min="0.0" max="1.0"/>
+				<mobject class="MInt2FloatConverter" name="Tune" a="0.005" t="0.0" min="0.0" max="1.0"/>
+				<mobject class="MInt2FloatConverter" name="Phase" a="0.005" t="0.0" min="0.0" max="1.0"/>		
+				<mobject class="MInt2FloatConverter" name="VolOsc1" a="0.01" t="0.0" min="0.0" max="2.0"/>
+				<mobject class="MInt2FloatConverter" name="VolOsc2" a="0.01" t="0.0" min="0.0" max="2.0"/>
+				<mobject class="MInt2FloatConverter" name="VolOsc3" a="0.01" t="0.0" min="0.0" max="2.0"/>
+				<mobject class="MInt2FloatConverter" name="VolOsc4" a="0.01" t="0.0" min="0.0" max="2.0"/>			
+				<mobject class="MInt2FloatConverter" name="VolOsc5" a="0.01" t="0.0" min="0.0" max="2.0"/>
+				<mobject class="MInt2FloatConverter" name="VolOsc6" a="0.01" t="0.0" min="0.0" max="2.0"/>
+				<mobject class="MInt2FloatConverter" name="VolOsc7" a="0.01" t="0.0" min="0.0" max="2.0"/>
+			</converter>
+		</mobject>
+		<mobject class="MAttributeMatch" name="value">
+			<possiblecontent>
+				<condition content="String"/>
+				<condition content="MString"/>
+			</possiblecontent>
+			<converter>
+				<mobject class="MAttributeContentReplacer" content="String">
+					<attribute name="value"/>
+				</mobject>
+				<mobject class="MInt2FloatConverter" name="Volume" a="0.005" t="0.0" min="0.0" max="1.0"/>
+				<mobject class="MInt2FloatConverter" name="Tune" a="0.005" t="0.0" min="0.0" max="1.0"/>
+				<mobject class="MInt2FloatConverter" name="Phase" a="0.005" t="0.0" min="0.0" max="1.0"/>				
+				<mobject class="MInt2FloatConverter" name="Vol1" a="0.01" t="0.0" min="0.0" max="2.0"/>
+				<mobject class="MInt2FloatConverter" name="Vol2" a="0.01" t="0.0" min="0.0" max="2.0"/>
+				<mobject class="MInt2FloatConverter" name="Vol3" a="0.01" t="0.0" min="0.0" max="2.0"/>
+				<mobject class="MInt2FloatConverter" name="Vol4" a="0.01" t="0.0" min="0.0" max="2.0"/>			
+				<mobject class="MInt2FloatConverter" name="Vol5" a="0.01" t="0.0" min="0.0" max="2.0"/>
+				<mobject class="MInt2FloatConverter" name="Vol6" a="0.01" t="0.0" min="0.0" max="2.0"/>
+				<mobject class="MInt2FloatConverter" name="Vol7" a="0.01" t="0.0" min="0.0" max="2.0"/>	
+			</converter>
+		</mobject>
+		<mobject class="MAttributeMatch" name="value">
+			<possiblecontent>
+				<condition content="Noise"/>
+				<condition content="MNoise"/>
+			</possiblecontent>
+			<converter>
+				<mobject class="MAttributeContentReplacer" content="Noise">
+					<attribute name="value"/>
+				</mobject>
+				<mobject class="MInt2FloatConverter" name="Volume" a="0.005" t="0.0" min="0.0" max="1.0"/>
+			</converter>
+		</mobject>
+		<converter>
+			<mobject class="MElementRenamer" name="sourceprocessor"/>
+		</converter>
+	</mobject>
+	
+</mobject>
